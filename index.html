@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle's Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .nav-link:hover { color: #3b82f6; transition: color 0.3s ease; }
+        .hero-bg { background: linear-gradient(to right, #1e3a8a, #3b82f6); }
+        .card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
+        #menu-toggle { display: none; }
+        @media (max-width: 768px) {
+            #menu-toggle { display: block; }
+            #nav-links { display: none; }
+            #nav-links.active {
+                display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0;
+                background: white; padding: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-600">Kyle's Learning Hub</a>
+                </div>
+                <div class="flex items-center">
+                    <button id="menu-toggle" class="md:hidden text-gray-600 hover:text-blue-500 focus:outline-none" aria-label="Toggle navigation" aria-expanded="false">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                    <div id="nav-links" class="flex items-center space-x-4 md:flex">
+                        <a href="#home" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#what-we-do" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">What We Do</a>
+                        <a href="#courses" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Courses</a>
+                        <a href="#why-listen" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Why It’s Worth Listening</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-white">
+        <div class="text-center max-w-3xl mx-auto px-4" data-animate="hero">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Welcome to Kurzgesagt Sciovirtual Class</h1>
+            <p class="text-lg sm:text-xl mb-6">Discover coding, creativity, and fun through our courses!</p>
+            <a href="#what-we-do" class="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-100 transition">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section id="what-we-do" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10" data-animate="fade">What We Do</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md" data-animate="fade">
+                    <h3 class="text-xl font-semibold mb-4">Teach Coding</h3>
+                    <p class="text-gray-600">We offer fun, interactive coding lessons for kids using tools like Scratch and Python.</p>
+                </div>
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md" data-animate="fade">
+                    <h3 class="text-xl font-semibold mb-4">Inspire Creativity</h3>
+                    <p class="text-gray-600">Our projects encourage students to build games, websites, and more, sparking their imagination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10" data-animate="fade">Our Courses</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md" data-animate="fade">
+                    <h3 class="text-xl font-semibold mb-4">Scratch Basics</h3>
+                    <p class="text-gray-600">Learn to create games and animations with Scratch, perfect for beginners.</p>
+                </div>
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md" data-animate="fade">
+                    <h3 class="text-xl font-semibold mb-4">Python for Kids</h3>
+                    <p class="text-gray-600">Dive into Python to build simple programs and explore coding concepts.</p>
+                </div>
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md" data-animate="fade">
+                    <h3 class="text-xl font-semibold mb-4">Web Development</h3>
+                    <p class="text-gray-600">Create websites using HTML, CSS, and JavaScript, just like this one!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why It’s Worth Listening Section -->
+    <section id="why-listen" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10" data-animate="fade">Why It’s Worth Listening</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md" data-animate="fade">
+                    <h3 class="text-xl font-semibold mb-4">Fun Learning</h3>
+                    <p class="text-gray-600">Our courses are engaging, designed by a kid for kids, making learning exciting.</p>
+                </div>
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md" data-animate="fade">
+                    <h3 class="text-xl font-semibold mb-4">Build Real Skills</h3>
+                    <p class="text-gray-600">Gain skills in coding and problem-solving that you can use to create your own projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FooterIt’s Worth Listening -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 Kyle's Learning Hub. Created with code and creativity.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+
+        // GSAP animations
+        document.querySelectorAll('[data-animate="fade"]').forEach((element, index) => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                delay: index * 0.2,
+                scrollTrigger: { trigger: element, start: 'top 80%' }
+            });
+        });
+
+        gsap.from('[data-animate="hero"]', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 0.5
+        });
+    </script>
+</body>
+</html>
